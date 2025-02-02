@@ -32,5 +32,7 @@ RUN mkdir -p /tmp/azcopy && \
   tar -Oxzf /tmp/azcopy.tar.gz > /tmp/azcopy/out && cp /tmp/azcopy/out /usr/local/bin/azcopy && \
   chmod +x /usr/local/bin/azcopy
 
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+
 WORKDIR /home/runner
 USER runner
