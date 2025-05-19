@@ -29,7 +29,7 @@ RUN apt update && apt install -y \
 
 RUN mkdir -p /tmp/azcopy && \
   curl -L -o /tmp/azcopy.tar.gz https://aka.ms/downloadazcopy-v10-linux && \
-  tar -xf /tmp/azcopy.tar.gz  -C /tmp/azcopy && cp /tmp/azcopy/azcopy /usr/local/bin/azcopy && \
+  tar -xf /tmp/azcopy.tar.gz -C /tmp/azcopy --strip-components=1 && cp /tmp/azcopy/azcopy /usr/local/bin/azcopy && \
   chmod +x /usr/local/bin/azcopy
 
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
