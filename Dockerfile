@@ -25,7 +25,8 @@ RUN apt update && apt install -y \
   libpangocairo-1.0-0\
   libcairo-gobject2\
   libgdk-pixbuf-2.0-0\
-  ca-certificates
+  ca-certificates\
+  zip
 
 RUN mkdir -p /tmp/azcopy && \
   curl -L -o /tmp/azcopy.tar.gz https://aka.ms/downloadazcopy-v10-linux && \
