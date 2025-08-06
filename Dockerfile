@@ -3,7 +3,9 @@ FROM ghcr.io/actions/actions-runner:2.325.0
 USER root
 
 RUN apt update && apt install -y \
-  curl git-lfs\
+  curl\
+  git-lfs\
+  gh\
   libnss3\
   libnspr4\
   libatk1.0-0\
