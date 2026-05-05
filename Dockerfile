@@ -2,6 +2,14 @@ FROM ghcr.io/actions/actions-runner:2.334.0
 
 USER root
 
+RUN rm -f /etc/apt/sources.list.d/*git-core*.list \
+    /etc/apt/sources.list.d/*ppa*.list \
+    /etc/apt/sources.list.d/*launchpad*.list \
+    /etc/apt/sources.list.d/*packagecloud*.list
+
+RUN sed -i 's|http://archive.ubuntu.com/ubuntu|http://azure.archive.ubuntu.com/ubuntu|g' /etc/apt/sources.list && \
+    sed -i 's|http://security.ubuntu.com/ubuntu|http://azure.archive.ubuntu.com/ubuntu|g' /etc/apt/sources.list
+
 RUN apt update \
     && apt install -y curl \
     && curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg \
