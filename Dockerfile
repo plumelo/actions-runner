@@ -26,6 +26,14 @@ RUN curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor |
     && apt install -y azure-cli \
     && rm -rf /var/lib/apt/lists/*
 
+RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \
+    | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_22.x $(lsb_release -cs) main" \
+    | tee /etc/apt/sources.list.d/nodesource.list && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends nodejs && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN npx -y playwright-core@1.59.1 install-deps chromium
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
