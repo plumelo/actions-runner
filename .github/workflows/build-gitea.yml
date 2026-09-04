@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: plumelo/act-runner
+  IMAGE_NAME: plumelo/runner-images-gitea
 
 jobs:
   build-and-push-image:

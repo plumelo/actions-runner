@@ -6,8 +6,8 @@ Custom CI runner container images for Plumelo projects.
 
 | Directory | Image | Base |
 |---|---|---|
-| `github/` | `ghcr.io/plumelo/actions-runner` | [`ghcr.io/actions/actions-runner`](https://github.com/actions/runner) |
-| `gitea/` | `ghcr.io/plumelo/act-runner` | [`gitea/runner-images`](https://github.com/gitea/runner-images) |
+| `github/` | `ghcr.io/plumelo/runner-images-github` | [`ghcr.io/actions/actions-runner`](https://github.com/actions/runner) |
+| `gitea/` | `ghcr.io/plumelo/runner-images-gitea` | [`gitea/runner-images`](https://github.com/gitea/runner-images) |
 
 Both images add browser dependencies for Playwright (chromium) plus a common
 toolset (`curl`, `git-lfs`, `ca-certificates`). The GitHub runner image adds
