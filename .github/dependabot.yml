@@ -15,7 +15,15 @@ updates:
       interval: weekly
 
   - package-ecosystem: docker
-    directory: /
+    directory: /github
+    labels:
+      - dependabot
+      - docker
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: docker
+    directory: /gitea
     labels:
       - dependabot
       - docker
